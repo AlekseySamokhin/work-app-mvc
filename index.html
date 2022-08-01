@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/form.css" />
+    <link rel="stylesheet" href="./css/sorting.css" />
+    <link rel="stylesheet" href="./css/filtres.css" />
+    <link rel="stylesheet" href="./css/button.css" />
+    <link rel="stylesheet" href="./css/employees.css" />
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="item item_1">
+        <form class="form" action="">
+          <h2 class="form__title title">Данные о сотруднике</h2>
+
+          <label for="lastName" class="form__label">Фамилия</label>
+          <input id="lastName" class="form__input" type="text" />
+
+          <label for="firstName" class="form__label">Имя</label>
+          <input id="lastName" class="form__input" type="text" />
+
+          <label for="middleName" class="form__label">Отчество</label>
+          <input id="middleName" class="form__input" type="text" />
+
+          <label for="birthDay" class="form__label">Дата рождения</label>
+          <input id="birthDay" class="form__input" type="date" />
+
+          <p class="title">Пол</p>
+
+          <div class="flex__wrapper padding">
+            <div class="form__radio">
+              <input id="male" class="form__input" type="radio" name="gender" value="male" />
+              <label for="male" class="form__label">Мужской</label>
+            </div>
+
+            <div class="form__radio">
+              <input id="female" class="form__input" type="radio" name="gender" value="female" />
+              <label for="female" class="form__label">Женский</label>
+            </div>
+          </div>
+
+          <p class="title">Высшеe образованиe</p>
+
+          <div class="margin-auto">
+            <input class="form__checkbox" type="checkbox" id="education" name="education" value="education" />
+            <label for="education" class="form__label">Eсть</label>
+          </div>
+
+          <div class="form__btn">
+            <button id="add" class="btn btn-primary btn-l" type="button">Очистить</button>
+            <button id="clear" class="btn btn-success btn-l" type="button">Добавить</button>
+          </div>
+        </form>
+      </div>
+
+      <div class="item item_2">
+        <div class="employees">
+          <h2 class="employees__title title">Список сотрудников</h2>
+          <ul class="work-list"></ul>
+        </div>
+      </div>
+      <div class="item item_3">
+        <div class="filter">
+          <h2 class="filter__title title">Фильтрация</h2>
+
+          <label for="gender" class="filter__label">Пол</label>
+
+          <select id="gender" class="filter__select" name="gender">
+            <option value="all">Все</option>
+            <option value="male">Мужчины</option>
+            <option value="female">Женщины</option>
+          </select>
+
+          <label for="age" class="filter__label">Возраст</label>
+          <select id="age" class="filter__select" name="age">
+            <option value="all">Все возрасты</option>
+            <option value="teen">до 25</option>
+            <option value="adult">от 25 до 45</option>
+            <option value="old">от 45</option>
+          </select>
+
+          <label for="filtrer__educaton" class="filter__label"> Образование</label>
+
+          <select id="filter__education" class="filter__select" name="education">
+            <option value="yes">С высшим образованием</option>
+            <option value="no">Без высшего образования</option>
+          </select>
+
+          <label for="status-filter" class="filter__label">Состояние</label>
+
+          <select id="status-filter" class="filter__select" name="status">
+            <option value="all">Показать всех</option>
+            <option value="work">Работающие в данный момент</option>
+            <option value="del">Уволенные</option>
+          </select>
+
+          <div class="filter__btn">
+            <button id="done" class="btn btn-success btn-l" type="button">Применить</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="item item_4">
+        <div class="sorting">
+          <h2 class="sorting__title title">Сортировка</h2>
+          <button id="done" class="btn btn-primary btn-xl" type="button">От А до Я</button>
+          <button id="done" class="btn btn-primary btn-xl" type="button">От Я до А</button>
+          <button id="done" class="btn btn-primary btn-xl" type="button">По дате приема</button>
+          <button id="done" class="btn btn-primary btn-xl" type="button">По дате приема</button>
+          <button id="done" class="btn btn-primary btn-xl" type="button">По увольнению</button>
+          <button id="done" class="btn btn-primary btn-xl" type="button">По увольнению</button>
+        </div>
+      </div>
+    </div>
+    <script src="js/helper.js"></script>
+    <script src="js/store.js"></script>
+    <script src="js/template.js"></script>
+    <script src="js/view.js"></script>
+    <script src="js/model.js"></script>
+    <script src="js/controller.js"></script>
+    <script src="js/app.js"></script>
+    <script>
+      console.log(window.app);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,14 @@
+.sorting {
+  display: grid;
+  align-items: center;
+  grid-template-columns: 1fr 1fr;
+  padding: 15px;
+  background: #96a5d2;
+  width: 100%;
+  height: 100%;
+  justify-items: center;
+}
+
+.sorting__title {
+  grid-column: 1 / 3;
+}
