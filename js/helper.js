@@ -11,36 +11,26 @@
     element.addEventListener(type, callback);
   };
 
-  window.getForm = function () {
-    const firstName = getElById("firstName").value;
+  window.getDataForm = function () {
     const lastName = getElById("lastName").value;
+    const firstName = getElById("firstName").value;
     const middleName = getElById("middleName").value;
     const birthDay = getElById("birthDay").value;
-    //const male = getElById("male");
-    //const female = getElById("female");
-    //const education = getElById("education");
 
-    //if (male.checked) {
-    //  let gender = "мужcкой";
-    //} else {
-    //  let gender = "женский";
-    //}
+    const male = getElById("male").checked;
+    const formation = getElById("education").checked;
 
-    //if (education.checked) {
-    //  let education = "имеется";
-    //} else {
-    //  let education = "не имеется";
-    //}
+    const gender = male ? "Мужской" : "Женский";
+    const education = formation ? "Eсть" : "Нет";
 
-    const dataEmployee = {
-      firstName: firstName,
+    const dataForm = {
       lastName: lastName,
+      firstName: firstName,
       middleName: middleName,
       birthDay: birthDay,
-      //gender: gender,
-      //education: education,
+      gender: gender,
+      education: education,
     };
-
-    return dataEmployee;
+    return dataForm;
   };
 })(window);

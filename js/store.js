@@ -10,6 +10,7 @@
     }
 
     save = function (data, callback) {
+
       var workData = JSON.parse(localStorage.getItem(this.dataName));
 
       callback = callback || function () {};

@@ -6,7 +6,7 @@
     }
 
     create = function (data, callback) {
-      data = data.value;
+      console.log(data);
       this.storage.save(data, callback);
     };
   }
