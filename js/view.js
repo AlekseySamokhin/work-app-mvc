@@ -11,7 +11,7 @@
     show(data) {
       var data = getDataForm();
       console.log(data);
-      self.$workList.innerHTML = self.template.show(data);
+      self.$workList.innerHTML = self.template.show([data]);
       //self.clearInput();
     }
 

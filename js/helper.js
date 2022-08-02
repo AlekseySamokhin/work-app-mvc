@@ -20,7 +20,7 @@
     const male = getElById("male").checked;
     const formation = getElById("education").checked;
 
-    const gender = male ? "Мужской" : "Женский";
+    const gender = male ? "Мужской" || "Женский" : "Неизвестно";
     const education = formation ? "Eсть" : "Нет";
 
     const dataForm = {
