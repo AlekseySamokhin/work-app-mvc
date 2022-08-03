@@ -5,19 +5,23 @@
       this.view = view;
       this.model = model;
 
-      self.view.bind("newEmployee", function (data) {
-        self.addEmployee(data);
+      self.view.bind("newEmployee", (data) => {
+        this.addEmployee(data);
       });
     }
 
     addEmployee(data) {
-      this.model.create(data, function () {
-        this.view.show(data);
+      console.log(data);
+      console.log("click addEmployee");
+      this.model.create(data, () => {
+        this.view.render("resetForm");
+        this.showEmployees();
       });
     }
 
     showEmployees() {
       this.model.read((data) => {
+        console.log("showEmployess");
         this.view.render("showEmployee", data);
       });
     }

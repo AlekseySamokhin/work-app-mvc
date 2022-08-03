@@ -18,12 +18,9 @@
       this.$workList = getElById("workList");
     }
 
-    show() {
-      var data = getDataForm();
-      this.$workList.innerHTML = self.template.show([data]);
-    }
 
     render(viewCmd, parameter) {
+      console.log(parameter);
       const self = this;
       const viewCommands = {
         showEmployee: function () {
