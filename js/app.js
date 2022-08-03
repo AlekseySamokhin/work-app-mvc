@@ -9,6 +9,11 @@
     }
   }
 
-  var workapp = new WorkApp("work-app-vanillas");
-  
+  const appEmployees = new WorkApp("app-work-list");
+
+  function setView() {
+    appEmployees.controller.setView();
+  }
+
+  $on(window, "load", setView);
 })(window);

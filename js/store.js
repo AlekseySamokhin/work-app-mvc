@@ -1,39 +1,34 @@
 (function (window) {
   class Store {
     constructor(name) {
-      this.dataName = name;
-      if (!localStorage.getItem(name)) {
-        const workData = [];
+      this._dbName = name;
 
-        localStorage.setItem(name, JSON.stringify(workData));
+      if (!localStorage.getItem(name)) {
+        const employees = [];
+
+        localStorage.setItem(name, JSON.stringify(employees));
       }
     }
 
-    save = function (data, callback) {
-
-      var workData = JSON.parse(localStorage.getItem(this.dataName));
+    save(data, callback) {
+      const employees = JSON.parse(localStorage.getItem(this._dbName));
 
       callback = callback || function () {};
 
-      workData.push(data);
+      employees.push(data);
 
-      localStorage.setItem(this.dataName, JSON.stringify(workData));
+      localStorage.setItem(this._dbName, JSON.stringify(employees));
 
-      callback([workData]);
-    };
+      return [employees];
+    }
 
-    //findAll = function (callback) {
-    //  callback = callback || function () {};
-    //  callback.call(this, JSON.parse(localStorage.getItem(this.dataName)));
-    //};
+    findAll(callback) {
+      const employees = JSON.parse(localStorage.getItem(this._dbName));
 
-    //removeAll = function (callback) {
-    //  callback = callback || function () {};
-    //  var empl = [];
-    //  localStorage.setItem(this.name, JSON.stringify(workData));
-    //  callback();
-    //};
+      callback(employees);
+    }
   }
+
   window.app = window.app || {};
   window.app.Store = Store;
 })(window);

@@ -1,14 +1,18 @@
 (function (window) {
   class Model {
     constructor(storage) {
-      self = this;
-      self.storage = storage;
+      this.storage = storage;
     }
 
-    create = function (data, callback) {
-      console.log(data);
+    create(data, callback) {
+      callback = callback || function () {};
+
       this.storage.save(data, callback);
-    };
+    }
+
+    read(callback) {
+      this.storage.findAll(callback);
+    }
   }
   window.app = window.app || {};
   window.app.Model = Model;

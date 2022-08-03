@@ -1,28 +1,51 @@
 (function (window) {
   class View {
     constructor(template) {
-      self = this;
-      self.template = template;
+      this.template = template;
 
-      self.$add = getElById("add");
-      self.$workList = getElById("workList");
+      this.$add = getElById("add");
+
+      this.$form = getElById("form");
+
+      this.$clear = getElById("clear");
+      this.$lastName = getElById("lastName");
+      this.$firstName = getElById("firstName");
+      this.$middleName = getElById("middleName");
+      this.$birthDay = getElById("birthDay");
+      this.$male = getElById("male");
+      this.$female = getElById("female");
+      this.$education = getElById("education");
+      this.$workList = getElById("workList");
     }
 
-    show(data) {
+    show() {
       var data = getDataForm();
-      console.log(data);
-      self.$workList.innerHTML = self.template.show([data]);
-      //self.clearInput();
+      this.$workList.innerHTML = self.template.show([data]);
     }
 
-    bind = function (type, callback) {
-      self = this;
-      if (type === "addEmployee") {
+    render(viewCmd, parameter) {
+      const self = this;
+      const viewCommands = {
+        showEmployee: function () {
+          self.$workList.innerHTML = self.template.show(parameter);
+        },
+      };
+
+      viewCommands[viewCmd]();
+    }
+
+    bind(event, handler) {
+      const self = this;
+      if (event === "newEmployee") {
         $on(self.$add, "click", function () {
-          callback(getDataForm());
+          handler(getDataForm());
         });
       }
-    };
+
+      if (event === "resetForm") {
+        self.$form.reset();
+      }
+    }
   }
 
   window.app = window.app || {};

@@ -1,20 +1,29 @@
 (function (window) {
   class Controller {
     constructor(model, view) {
-      var self = this;
-      self.view = view;
-      self.model = model;
+      const self = this;
+      this.view = view;
+      this.model = model;
 
-      self.view.bind("addEmployee", function (data) {
-        self.addEmplooyee(data);
+      self.view.bind("newEmployee", function (data) {
+        self.addEmployee(data);
       });
     }
 
-    addEmplooyee(data) {
-      var self = this;
-      self.model.create(data, function () {
-        self.view.show(data);
+    addEmployee(data) {
+      this.model.create(data, function () {
+        this.view.show(data);
       });
+    }
+
+    showEmployees() {
+      this.model.read((data) => {
+        this.view.render("showEmployee", data);
+      });
+    }
+
+    setView() {
+      this.showEmployees();
     }
   }
 
