@@ -1,6 +1,7 @@
 (function (window) {
   class Controller {
     constructor(model, view) {
+      console.log("2");
       this.view = view;
       this.model = model;
 
@@ -11,20 +12,25 @@
 
     addEmployee(data) {
       this.model.create(data, () => {
-        //this.view.render("resetForm");
-        this.showEmployees();
+        this.view.render("resetForm");
       });
       this.showEmployees();
     }
 
     showEmployees() {
+      console.log("6");
       this.model.read((data) => {
+        console.log("9");
         this.view.render("showEmployee", data);
+        console.log("-9");
       });
+      console.log("-6");
     }
 
     setView() {
+      console.log("5");
       this.showEmployees();
+      console.log("-5");
     }
   }
 

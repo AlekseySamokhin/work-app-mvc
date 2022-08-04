@@ -5,13 +5,16 @@
     }
 
     create(data, callback) {
+      console.log("5");
       callback = callback || function () {};
 
       this.storage.save(data, callback);
     }
 
     read(callback) {
+      console.log("7");
       this.storage.findAll(callback);
+      console.log("-7");
     }
   }
   window.app = window.app || {};

@@ -20,25 +20,29 @@
 
     render(viewCmd, parameter) {
       const self = this;
+      console.log("10");
       const viewCommands = {
         showEmployee: function () {
+          console.log("11");
           self.$workList.innerHTML = self.template.show(parameter);
+          console.log("-11");
+        },
+
+        resetForm: function () {
+          self.$form.reset();
         },
       };
-
       viewCommands[viewCmd]();
+      console.log("-10");
     }
 
     bind(event, handler) {
+      console.log("3");
       const self = this;
       if (event === "newEmployee") {
         $on(self.$add, "click", function () {
           handler(getDataForm());
         });
-      }
-
-      if (event === "resetForm") {
-        self.$form.reset();
       }
     }
   }

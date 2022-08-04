@@ -15,6 +15,7 @@
     }
 
     show(data) {
+      console.log("12-done");
       let i, l;
       let view = "";
       for (i = 0, l = data.length; i < l; i++) {

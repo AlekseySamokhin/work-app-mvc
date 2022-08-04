@@ -18,14 +18,15 @@
       employees.push(data);
 
       localStorage.setItem(this._dbName, JSON.stringify(employees));
-
-      return [employees];
     }
 
     findAll(callback) {
+      console.log("8");
+
       const employees = JSON.parse(localStorage.getItem(this._dbName));
 
       callback(employees);
+      console.log("-8");
     }
   }
 

@@ -19,7 +19,7 @@
     const currentTime = `${day}-${month}-${year}`;
     return currentTime;
   };
-  
+
   window.getDataForm = function () {
     const lastName = getElById("lastName").value;
     const firstName = getElById("firstName").value;
@@ -28,7 +28,7 @@
     const male = getElById("male").checked;
     const formation = getElById("education").checked;
 
-    const gender = male ? "Мужской" || "Женский" : "Неизвестно";
+    const gender = male ? "Мужской" : "Женский";
     const education = formation ? "Eсть" : "Нет";
 
     const id = "id" + new Date().getTime();
