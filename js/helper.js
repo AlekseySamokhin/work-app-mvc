@@ -3,13 +3,23 @@
     return document.querySelector(selector);
   };
 
+  window.$on = function (element, type, callback) {
+    element.addEventListener(type, callback);
+  };
+
   window.getElById = function (id) {
     return document.getElementById(id);
   };
 
-  window.$on = function (element, type, callback) {
-    element.addEventListener(type, callback);
+  window.getCurrentTime = function () {
+    const today = new Date();
+    const day = today.getDate();
+    const month = today.getMonth() + 1;
+    const year = today.getFullYear();
+    const currentTime = `${day}-${month}-${year}`;
+    return currentTime;
   };
+  
 
   window.getDataForm = function () {
     const lastName = getElById("lastName").value;
@@ -32,14 +42,7 @@
       return age;
     };
 
-    const getCurrentTime = function () {
-      const today = new Date();
-      const day = today.getDate();
-      const month = today.getMonth() + 1;
-      const year = today.getFullYear();
-      const currentTime = `${day}-${month}-${year}`;
-      return currentTime;
-    };
+    const currentTime = getCurrentTime();
 
     const dataForm = {
       id: id,
@@ -50,7 +53,7 @@
       age: getAge(),
       gender: gender,
       education: education,
-      startWorking: getCurrentTime(),
+      startWorking: currentTime,
       endWorking: null,
     };
 

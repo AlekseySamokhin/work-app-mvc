@@ -4,9 +4,7 @@
       this.template = template;
 
       this.$add = getElById("add");
-
       this.$form = getElById("form");
-
       this.$clear = getElById("clear");
       this.$lastName = getElById("lastName");
       this.$firstName = getElById("firstName");
@@ -20,7 +18,6 @@
 
 
     render(viewCmd, parameter) {
-      console.log(parameter);
       const self = this;
       const viewCommands = {
         showEmployee: function () {
