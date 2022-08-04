@@ -11,9 +11,10 @@
 
     addEmployee(data) {
       this.model.create(data, () => {
-        this.view.render("addEmployee", data);
         //this.view.render("resetForm");
+        this.showEmployees();
       });
+      this.showEmployees();
     }
 
     showEmployees() {

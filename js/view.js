@@ -3,9 +3,12 @@
     constructor(template) {
       this.template = template;
 
+      this.$workList = getElById("workList");
+
       this.$add = getElById("add");
       this.$form = getElById("form");
       this.$clear = getElById("clear");
+
       this.$lastName = getElById("lastName");
       this.$firstName = getElById("firstName");
       this.$middleName = getElById("middleName");
@@ -13,9 +16,7 @@
       this.$male = getElById("male");
       this.$female = getElById("female");
       this.$education = getElById("education");
-      this.$workList = getElById("workList");
     }
-
 
     render(viewCmd, parameter) {
       const self = this;

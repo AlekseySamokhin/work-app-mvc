@@ -20,7 +20,6 @@
     return currentTime;
   };
   
-
   window.getDataForm = function () {
     const lastName = getElById("lastName").value;
     const firstName = getElById("firstName").value;
