@@ -18,6 +18,7 @@
       employees.push(data);
 
       localStorage.setItem(this._dbName, JSON.stringify(employees));
+      callback(employees);
     }
 
     findAll(callback) {
