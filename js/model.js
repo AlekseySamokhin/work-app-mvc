@@ -5,7 +5,6 @@
     }
 
     create(data, callback) {
-      console.log("5");
       callback = callback || function () {};
 
       this.storage.save(data, callback);
